@@ -46,12 +46,17 @@ body {
 }
 
 .game-info {
+  height: 480px;
   grid-column: 2;
   margin-left: 30px;
   align-items: center;
   text-align: center;
   color: #ddd;
   font-size: 30px;
+}
+
+li {
+  list-style: none;
 }
 
 button {
@@ -65,12 +70,12 @@ button:hover {
 
 .timetravel-button{
   font: 18px "Public Sans", sans-serif;
-  display: block;
-  width: 200px;
+  width: 220px;
   height: 40px;
   color: #353438;
   outline: none;
   border: none;
+  margin-bottom: 2px;
 }
 
 .square {

@@ -88,6 +88,8 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
+    } else if (current.squares.every((square) => square !== null)) {
+      status = 'Draw';
     } else {
       status = 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
