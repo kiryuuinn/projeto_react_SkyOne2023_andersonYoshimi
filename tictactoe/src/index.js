@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import './index.css'
+import './index.css';
+import Logo from './assets/logo_branca.png';
 
 function Square(props) {
 
@@ -97,13 +98,15 @@ class Game extends React.Component {
         'Go to game start';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button className="timetravel-button" onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
 
     return (
       <div className="game">
+        <div className="logo"> <img src={Logo} alt="Logo" />
+        </div>
         <div className="game-board">
           <Board 
           squares={current.squares}

@@ -1,51 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@800&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --gradient-color-1:hsl(268, 86%, 57%);
+  --gradient-color-2:hsl(236, 87%, 34%);
+  --gradient-color-3:hsl(219, 61%, 51%);
+}
+
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-}
-
-.board-row::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  text-align: center;
-  width: 34px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kdb-navigation .square:focus {
-  background: #ddd;
+  font: 14px "Public Sans", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(180deg,
+  hsl(236, 87%, 34%),hsl(219, 61%, 51%));
+  /*background-color: hsl(219, 61%, 51%);
+  background: linear-gradient(-45deg,var(--gradient-color-1) ,var(--gradient-color-2),var(--gradient-color-3));
+  background-size: 400% 400%;
+  animation:change 10s ease-in-out infinite;*/
+  overflow-x: hidden;
 }
 
 .game {
-  display: flex;
-  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  column-gap: 80px;
+}
+
+.logo img { 
+  width: 24rem;
+  height: auto;
+  margin-top: 80px;
+}
+
+.game-board {
+  grid-column: 1;
 }
 
 .game-info {
-  margin-left: 20px;
+  grid-column: 2;
+  margin-left: 30px;
+  align-items: center;
+  text-align: center;
+  color: #ddd;
+  font-size: 30px;
 }
+
+button {
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.timetravel-button{
+  font: 18px "Public Sans", sans-serif;
+  display: block;
+  width: 200px;
+  height: 40px;
+  color: #353438;
+  outline: none;
+  border: none;
+}
+
+.square {
+  border: 2px solid hsl(219, 61%, 51%);
+  float: left;
+  font-family: "Public Sans";
+  font-size: 6rem;
+  color: #353438;
+  font-weight: bold;
+  line-height: 34px;
+  text-align: center;
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*@keyframes change {
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}*/
